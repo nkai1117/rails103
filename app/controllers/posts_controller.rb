@@ -10,10 +10,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.group = @group
     @post.user = current_user
-    
+
     if @post.save
       redirect_to group_path(@group)
-      esle
+    else
 render :new
 end
 end
